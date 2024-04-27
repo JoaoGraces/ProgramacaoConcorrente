@@ -6,12 +6,16 @@ public class Store {
 
     public Store(Account account, Bank bank, Employee firstEmployee, Employee secondEmployee) {
         this.account = account;
-        this.firstEmployee = firstEmployee
+        this.firstEmployee = firstEmployee;
         this.secondEmployee = secondEmployee;
         this.bank = bank;
     }
 
-    public synchronized void pagarSalarios() {
+    public Account getAccount() {
+        return account;
+    }
+
+    public synchronized void paySalaries() {
         if (account.getBalance() >= 1400) {
             bank.transfer(account, firstEmployee.getSalaryAccount(), firstEmployee.getSalary());
             firstEmployee.investir();
