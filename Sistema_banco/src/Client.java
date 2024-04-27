@@ -4,7 +4,7 @@ public class Client extends  Thread {
 
     // valores possiveis de compra em cada loja
     private static final double[] salesPrice = {100, 200};
-    private Account account;
+    public Account account;
     private Store store1;
     private Store store2;
     private Bank bank;
@@ -29,7 +29,7 @@ public class Client extends  Thread {
             Double transferAmmount = salesPrice[transferRandom];
             // if ternário que verifica o indice que foi selecionado - forma mais facil de fazer quando se usa apenas dois inicies
             Store randomStore = random.nextInt(2) == 0 ? this.store1 : this.store2;
-            synchronized (account) {
+            synchronized (account) { // fazendo a compra de forma segura
                 bank.transfer(this.account, randomStore.getAccount(), transferAmmount);
                 System.out.println("Compra no valor de R$" + transferAmmount + "foi feita pela conta" + Thread.currentThread().getName() + "na loja " + randomStore);
             }
