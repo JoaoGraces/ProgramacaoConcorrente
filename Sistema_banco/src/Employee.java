@@ -3,12 +3,13 @@ public class Employee extends Thread {
     private double salary = 1400.0;
     private Account salaryAccount;
     private Account investmentAccount;
+    private String exmployeeName;
 
-    public Employee(Account salaryAccount, Account investmentAccount, Double salary) {
+    public Employee(Account salaryAccount, Account investmentAccount, Double salary, String exmployeeName) {
         this.salaryAccount = salaryAccount;
         this.investmentAccount = investmentAccount;
         this.salary = salary;
-
+       this.exmployeeName = exmployeeName;
     }
 
     // gerar o get para conseguir visualizar o salario e poder manipula-lo
@@ -22,6 +23,10 @@ public class Employee extends Thread {
 
     public Double getSalary() {
         return salary;
+    }
+
+    public String getExmployeeName() {
+        return exmployeeName;
     }
 
     public void investir() {

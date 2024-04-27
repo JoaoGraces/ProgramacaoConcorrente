@@ -11,9 +11,9 @@ public class Bank {
             if (originAccount.getBalance() >= ammount) {
                 originAccount.withdraw(ammount);
                 destinyAccount.deposit(ammount);
-                System.out.println("Conta de origem(remetente) : " + originAccount);
-                System.out.println("Conta de destino(destinatário) : " + destinyAccount);
-                System.out.println("Valor da transferencia : "  + ammount);
+                System.out.println("Conta de origem(remetente): " + originAccount);
+                System.out.println("Conta de destino(destinatário): " + destinyAccount);
+                System.out.println("Valor da transferencia: "  + ammount);
                 System.out.println("-------------------------------------------------------");
             } else {
                 System.out.println("O saldo da conta " + originAccount + " é insuficiente para realizar uma transferencia do valor de R$" + ammount + "para a conta " + destinyAccount);
