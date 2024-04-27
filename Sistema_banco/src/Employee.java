@@ -1,17 +1,23 @@
 public class Employee extends Thread {
-    // criando o salario visivel para todas as classes
-    public static final double salary = 1400.0;
+    // criando o salario pois cada funcionario pode ter um salario (em um caso mais real)
+    private double salary = 1400.0;
     private Account salaryAccount;
     public Account investmentAccount;
 
-    public Employee(Account salaryAccount, Account investmentAccount) {
+    public Employee(Account salaryAccount, Account investmentAccount, Double salary) {
         this.salaryAccount = salaryAccount;
         this.investmentAccount = investmentAccount;
+        this.salary = salary;
+
     }
 
     // gerar o get para conseguir visualizar o salario e poder manipula-lo
     public Account getSalaryAccount() {
         return salaryAccount;
+    }
+
+    public Double getSalary() {
+        return salary;
     }
 
     public void investir() {
