@@ -39,7 +39,7 @@ public class Client extends  Thread {
             Store randomStore = random.nextInt(2) == 0 ? this.store1 : this.store2;
             synchronized (account) { // fazendo a compra de forma segura
                 bank.transfer(this.account, randomStore.getAccount(), transferAmmount);
-                System.out.println("Compra no valor de R$" + transferAmmount + " foi feita pelo" + this.clientName + "na loja " + randomStore);
+                System.out.println("Compra no valor de R$" + transferAmmount + " foi feita pelo " + this.clientName + "na loja " + randomStore);
                 if (randomStore.getAccount().getBalance() >= 1400) {
                     randomStore.paySalaries();
                 }

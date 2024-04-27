@@ -26,7 +26,7 @@ public class Store {
             if (this.firstEmployee.getSalaryAccount().getBalance() == 0 && this.secondEmployee.getSalaryAccount().getBalance() == 0) {
                 // caso os dois nao tenham recebido ainda ele escolhe randomicamente
                 Employee randomEmployee = random.nextInt(2) == 0 ? this.firstEmployee : this.secondEmployee;
-                System.out.println(storeName + "pagou o " + secondEmployee.getExmployeeName());
+                System.out.println(storeName + " pagou o " + secondEmployee.getExmployeeName());
                 bank.transfer(this.account, randomEmployee.getSalaryAccount(), randomEmployee.getSalary());
                 randomEmployee.investir();
             } else {
